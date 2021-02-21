@@ -55,7 +55,8 @@
 				document.getElementById("donutchart").style.display = 'none';
 				document.getElementById("donutchart").style.width = "0px";
 				document.getElementById("donutchart").style.height = "0px";
-				
+				document.getElementById("chart1").style.display='none';
+                document.getElementById("chart2").style.display='none';
 				document.getElementById("graph_img").style.display = '';
 				
 				if (x == '1' && y == '1') {
@@ -94,7 +95,9 @@
 			} else if (graph == "2") {
 				// Show Pie Chart
 				document.getElementById("graph_img").style.display = 'none';
-				
+				document.getElementById("chart1").style.display='none';
+                document.getElementById("chart2").style.display='none';
+
 				document.getElementById("donutchart").style.display = '';
 				document.getElementById("donutchart").style.width = "700px";
 				document.getElementById("donutchart").style.height = "400px";
@@ -112,7 +115,9 @@
 				document.getElementById("donutchart").style.display = 'none';
 				document.getElementById("donutchart").style.width = "0px";
 				document.getElementById("donutchart").style.height = "0px";
-				
+				document.getElementById("chart1").style.display='none';
+                document.getElementById("chart2").style.display='none';
+                
 				document.getElementById("graph_img").style.display = '';
 				
 				if (x == '1' && y == '1') {
