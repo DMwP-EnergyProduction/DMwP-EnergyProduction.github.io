@@ -1,1 +1,111 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Energy Usage in the U.S.</title>
+    <meta charset="utf-8" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([['Source_Average', 'value'], ['Sources.Generation', 1059884.64], ['Sources.Purchased', 1492859.43], ['Sources.Other', 23689.91]]);
+
+        var options = {
+          title: "Power Source Break Down (Mean)",
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body>
+    <h1>Energy Usage in the U.S. (2017)</h1>
+    <h2 id = "author">Authors: Steven Feng, Lawrence Ko, Wenze Ma, Shiloh Musser, Darren Zhu</h2>
+
+    <div id = "main">
+        <h2> Overview: </h2>
+        <q>The U.S. Energy Information Adminstration collects and curates self-reported information from energy utilities 
+            about energy production and usage in the United States. This data set contains information from over 2,000 U.S. 
+            utilities in 2017. The information includes sources of energy, its uses in different economic sectors, and the 
+            revenues obtained from the sale of electrical energy.</q>
+
+        <div id = "description_div">
+            <h2> Data Description: </h2>
+            <button id = "clickViewDescription" class = "buttons" type="button">Click to view description</button>
+            <img id = "description_img" src="Images/DataDescription.png" alt="Data Description" width="800px"/>
+        </div>
+
+        <div id = "graph_div">
+            <h2> Graphs: 
+            <select name="graph-type" id="graph-type">
+                <option value="1">X-Y Label Plots</option>
+                <option value="2">Pie Charts</option>
+                <option value='3'>Bar Charts</option>
+                <option value='4'>X-Y Label Interactive Plot</option>
+                <option value='5'>Interactive Bar Chart</option>
+            </select>
+            <button id = "changeGraphType" class = "buttons" type="button">Change</button>
+            </h2>
+			
+			<div id="selection">
+            <label for="y_label">Choose y label:</label>
+            <select name="y-axis" id="y_label">
+                <option value="1">Peak Summer Demand</option>
+                <option value="2">Peak Winter Demand</option>
+                <option value="3">Utility State</option>
+                <option value="4">Utility Type</option>
+            </select>
+            <br><br>
+
+            <label for="x_label">Choose x label:</label>
+            <select name="x-axis" id="x_label">
+                <option value="1">Total Generation of Power</option>
+                <option value="2">Total Power losses</option>
+                <option value="3">Total Revenue</option>
+                <option value="4">Peak Summer Demand</option>
+            </select>
+            <br><br>
+            </div>
+            
+            <div id="selection_bar" style="display: none;">
+            <label for="y_label">Choose y label:</label>
+            <select name="y-axis" id="y_label_bar">
+                <option value="1">Customer Number</option>
+                <option value="2">Revenue (thousands of US Dollar)</option>
+                <option value="3">Power Delivered to Customers (MWh)</option>
+            </select>
+            <br><br>
+
+            <label for="x_label">Choose x label:</label>
+            <select name="x-axis" id="x_label_bar">
+                <option value="1">Utility Type</option>
+            </select>
+            <br><br>
+            </div>
+            
+            <button id = "clickViewGraphs" class = "buttons" type="button">submit</button>
+            <div id="displayArea"></div>
+
+			<div id="donutchart" style="width: 900px; height: 520px; display: none;"></div>
+            <img id = "graph_img" class="center" style="display: none;" src="Images/background.png" alt="Graph" />
+
+            
+        </div>
+
+        <div id="chart1" style="display: none;"></div>
+        <div id="chart2" style="display: none;"></div>
+    </div>
+    <script src="jquery-3.1.1.js"></script>
+    <script src="d3/d3.js" charset="utf-8"></script>
+    <script src="c3-0.7.20/c3.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
+
+    <script language="JavaScript" src="EnergyUsage.js"></script>
+</body>
+
+</html>

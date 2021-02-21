@@ -1,0 +1,46 @@
+body {
+    background-image: url("Images/background.png");
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 3px 3px #999999;
+    font-weight: bold;
+    font-size: 24pt;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+#author {
+    text-align: center;
+    vertical-align: auto;
+}
+
+#main {
+    border: 4px solid gray;
+    width: 800px;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    padding: 5px;
+}
+
+#description_img {
+    display: none;
+}
+
+.buttons {
+    margin: 10px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
